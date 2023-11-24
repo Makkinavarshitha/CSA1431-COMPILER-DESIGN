@@ -1,0 +1,16 @@
+%{
+#include<stdio.h>
+%}
+%%
+[A-Z]+[\t\n] {printf("capital letter");}
+.;
+%%
+int main()
+{
+ printf("enter the input string:");
+  yylex();
+}
+int yywrap()
+{
+return 1;
+}
