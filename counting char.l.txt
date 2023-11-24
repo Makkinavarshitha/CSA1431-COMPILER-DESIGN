@@ -1,0 +1,19 @@
+%{
+int nchar, nword, nline;
+%}
+%%
+In {nlinett; nchar++; }
+[^ ItIn]+ { nwordtt, nchar += yyleng; }
+• {nchar++; }
+%%
+int yywrap(void) f
+return 1;
+}
+int main(int argc, char *argv[]) {
+yyin = fopen(argv[1], "p");
+yylex();
+printf("Number of characters = %d\n", nchar);
+printf("Number of words = %dIn", nword);
+printf("Number of lines = %dIn", nline);
+fclose(yyin);
+}
